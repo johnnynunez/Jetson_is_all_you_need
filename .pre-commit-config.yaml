@@ -1,6 +1,12 @@
 default_language_version:
   python: python3
 
+ci:
+  autofix_prs: true
+  autoupdate_schedule: weekly
+  autofix_commit_msg: "fix(pre_commit): 🎨 auto format pre-commit hooks"
+  autoupdate_commit_msg: "chore(pre_commit): ⬆ pre_commit autoupdate"
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
