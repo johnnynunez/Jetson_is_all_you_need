@@ -21,12 +21,12 @@ repos:
       - id: check-toml
       - id: check-case-conflict
       - id: check-added-large-files
-        args: ['--maxkb=2048']
+        args: ["--maxkb=2048"]
         exclude: ^logo/
       - id: detect-private-key
       - id: forbid-new-submodules
       - id: pretty-format-json
-        args: ['--autofix', '--no-sort-keys', '--indent=4']
+        args: ["--autofix", "--no-sort-keys", "--indent=4"]
       - id: end-of-file-fixer
       - id: mixed-line-ending
 
@@ -35,28 +35,28 @@ repos:
     rev: 23.11.0
     hooks:
       - id: black
-        args: [ --line-length, "100" ]
+        args: [--line-length, "100"]
 
   # python import sorting
   - repo: https://github.com/PyCQA/isort
     rev: 5.12.0
     hooks:
       - id: isort
-        args: [ "--profile", "black", "--filter-files" ]
+        args: ["--profile", "black", "--filter-files"]
 
   # python upgrading syntax to newer version
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.0
     hooks:
       - id: pyupgrade
-        args: [ --py311-plus ]
+        args: [--py311-plus]
 
   # python docstring formatting
   - repo: https://github.com/myint/docformatter
     rev: v1.7.5
     hooks:
       - id: docformatter
-        args: [ --in-place, --wrap-summaries=99, --wrap-descriptions=99 ]
+        args: [--in-place, --wrap-summaries=99, --wrap-descriptions=99]
 
   # python check (PEP8), programming errors and code complexity
   - repo: https://github.com/PyCQA/flake8
@@ -76,14 +76,14 @@ repos:
     rev: "1.7.5"
     hooks:
       - id: bandit
-        args: [ "-s", "B101" ]
+        args: ["-s", "B101"]
 
   # yaml formatting
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.3
+    rev: v3.1.0
     hooks:
       - id: prettier
-        types: [ yaml ]
+        types: [yaml]
         exclude: "environment.yaml"
 
   # shell scripts linter
@@ -97,7 +97,7 @@ repos:
     rev: 0.7.17
     hooks:
       - id: mdformat
-        args: [ "--number" ]
+        args: ["--number"]
         additional_dependencies:
           - mdformat-gfm
           - mdformat-tables
@@ -125,9 +125,9 @@ repos:
     rev: 1.7.0
     hooks:
       - id: nbqa-black
-        args: [ "--line-length=99" ]
+        args: ["--line-length=99"]
       - id: nbqa-isort
-        args: [ "--profile=black" ]
+        args: ["--profile=black"]
       - id: nbqa-flake8
         args:
           [
